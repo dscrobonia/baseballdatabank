@@ -54,7 +54,28 @@ remember that these data are updated with some lag, and therefore may differ fro
 data which appear elsewhere on the Internet or other sources.
 
 
-Docker & SQL Server
--------------------
+Docker & Microsoft SQL Server
+----------------------
+**Dependencies**
+* [docker](https://www.docker.com/get-started)
+* [sqlcmd](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017)
 
+**Starting the Server**
 
+To start the Microsoft SQL Server from docker run:
+```
+docker run -p 1433:1433 lahmansbaseballdb
+```
+
+**Connecting to Server**
+
+To connect to the server run:
+```
+sqlcmd -S localhost,1433 -U SA -P P@ssword1
+```
+
+Or use the make shortcut and run:
+
+```
+make db-connect
+```
