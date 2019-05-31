@@ -5,7 +5,8 @@ echo 'Starting SQL server in background...'
 /opt/mssql/bin/sqlservr &
 
 # wait for the server to get up
-#sleep 20
+echo 'Waiting 20 seconds for server to spin up...'
+sleep 20
 
 echo 'Restoring LahmansBaseballDB to SQL server...'
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'P@ssword1' \
